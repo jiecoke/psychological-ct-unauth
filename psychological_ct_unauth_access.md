@@ -16,7 +16,7 @@ Hunter: `web.title="心理CT云系统" && web.body="Yesleep Libra"`
 
 ![fingerprint](assets/image-fingerprint.png)
 
-> **Note:**&#8203; The vulnerability is confirmed on V1.0.1. Some Internet-facing deployments may already be patched and therefore not reproducible. The attached PoC script (`Poc.py`) distinguishes patched targets (`10200`) from vulnerable ones (`code=0`), so a failed reproduction on a single instance does not invalidate the vulnerability.
+> **Note:**&#8203; The vulnerability is confirmed on V1.0. Some Internet-facing deployments may already be patched and therefore not reproducible. The attached PoC script (`Poc.py`) distinguishes patched targets (`10200`) from vulnerable ones (`code=0`), so a failed reproduction on a single instance does not invalidate the vulnerability.
 
 
 # [DETAILS]
