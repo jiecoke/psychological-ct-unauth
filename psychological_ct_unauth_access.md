@@ -91,7 +91,7 @@ By enumerating the `kw` and `id` parameters, an attacker can retrieve the person
 
 # [Proof of Concept (Script)]
 
-A ready-to-run proof-of-concept script is provided in this repository (`Poc.py`). It automatically extracts the signing salt from the front-end bundle (`app.*.js`) and falls back to the known hard-coded salt `saltjvTucz3EOg3F`, then forges the `sign` header to query both vulnerable endpoints.
+A ready-to-run proof-of-concept script is provided in this repository (`POC/Poc.py`). It automatically extracts the signing salt from the front-end bundle (`app.*.js`) and falls back to the known hard-coded salt `saltjvTucz3EOg3F`, then forges the `sign` header to query both vulnerable endpoints.
 
 ```bash
 python Poc.py -u http://TARGET:8800 -kw 18000 -id 18000
