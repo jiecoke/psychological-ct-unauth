@@ -1,4 +1,4 @@
-# [PRODUCT] Psychological CT Cloud System (Yesleep Libra) V1.0.1
+# [PRODUCT] Psychological CT Cloud System (Yesleep Libra) V1.0
 
 ![product](assets/image-product.png)
 
