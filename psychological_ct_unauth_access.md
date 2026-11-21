@@ -2,7 +2,7 @@
 
 ![product](assets/image-product.png)
 
-Vendor website: http://60.16.2.88:8800/
+Vendor website: http://baoxiu.jxgzsfybjy.cn:8800/
 
 # [TYPE] AUTHENTICATION BYPASS / UNAUTHORIZED ACCESS
 
