@@ -86,6 +86,23 @@ c: h5
 
 By enumerating the `kw` and `id` parameters, an attacker can retrieve the personal information and psychological assessment results of arbitrary patients (e.g. `record-detail id=18000` resolves to `userId=16795`, which is then queryable via `users/one kw=16795`).
 
+# [Proof of Concept (Script)]
+
+A ready-to-run proof-of-concept script is provided in this repository (`Poc.py`). It automatically extracts the signing salt from the front-end bundle (`app.*.js`) and falls back to the known hard-coded salt `saltjvTucz3EOg3F`, then forges the `sign` header to query both vulnerable endpoints.
+
+```bash
+python Poc.py -u http://TARGET:8800 -kw 18000 -id 18000
+```
+
+Key options:
+
+- `--salt <value>`: manually specify the salt if the target uses a different one.
+- `--mask`: mask phone numbers and national ID numbers in the output (for privacy).
+- `--proxy http://127.0.0.1:7890`: route traffic through a proxy.
+- `-o result.txt`: save the full output to a file for evidence.
+
+The script distinguishes three outcomes: `code=0` (unauthenticated data returned), `10200` (deployment patched / session required), and `10100` (salt mismatch). This helps reviewers determine whether a given deployment is vulnerable or simply patched.
+
 # [Mitigation & Fix Recommendations]
 
 1. Enforce session validation at the gateway layer for all APIs (`users/one`, `record-detail`, etc.); return `401` for unauthenticated requests.
